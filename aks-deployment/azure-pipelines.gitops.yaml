@@ -8,7 +8,7 @@ variables:
   GITHUB_USER: 'ErikLundJensen'
   KEY_VAULT: 'elj-sandbox-vault'
   # Demo token
-  GITHUB_TOKEN: '2b8d89b01ab20b7ef8d4f32b2a44c2272dbcdf89'
+  GITHUB_TOKEN: '2de9c7486a5f6ff3c3be3bff762ae35aa5e43461'
 
 stages:
 - stage: DeployGitOpsCluster
