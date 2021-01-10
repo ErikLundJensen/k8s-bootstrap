@@ -46,7 +46,7 @@ stages:
         inlineScript: |
           export GITHUB_TOKEN=$(GITHUB_TOKEN)
           az aks get-credentials -g $(RG) -n $(CLUSTERNAME) --admin
-          msi="$(az aks show -n aks-sandbox2 -g aks-sandbox2 | jq .identityProfile.kubeletidentity.objectId -r)"
+          msi="$(az aks show -n aks-sandbox2 -g sandboxRG | jq .identityProfile.kubeletidentity.objectId -r)"
           az keyvault set-policy --name $(KEY_VAULT) --object-id $msi --secret-permissions get
           curl -s https://toolkit.fluxcd.io/install.sh | sudo bash
           flux bootstrap github --owner=flux-demo --repository=$(GITHUB_REPO) --branch=main --path=demo-cluster --personal
